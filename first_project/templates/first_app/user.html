@@ -1,0 +1,20 @@
+{% extends 'first_app/base.html' %}
+{% block body_block %}
+<div class="jumbotron">
+  {% if users %}
+    <ol>
+      {% for person in users %}
+        <li>User Info:</li>
+          <ul>
+            <li>First Name: {{person.first_name}}</li>
+            <li>Last Name: {{person.last_name}}</li>
+            <li>Email: {{person.email}}</li>
+          </ul>
+      {% endfor %}
+    </ol>
+  {% else %}
+    <p>NO ACCESS RECORD FOUND</p>
+  {% endif %}
+</div>
+
+{% endblock %}
